@@ -1,3 +1,5 @@
+
+<script>
 const snacks = {
     fruit: 'apple',
     tastySnacks: ['gummy bears', 'cheesecake']
@@ -11,7 +13,9 @@ const traceTheChain = (object) =>{
     let proto = [];
     while(Object.getPrototypeOf(object)){   // while it is not NULL
         object = Object.getPrototypeOf(object);
-        traceTheChain.push(object);
+        proto.push(object);
     }
     return proto;
 }
+console.log(traceTheChain(Array));
+</script>

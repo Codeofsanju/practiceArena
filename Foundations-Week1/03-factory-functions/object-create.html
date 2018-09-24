@@ -1,0 +1,31 @@
+<script>
+// Creating custom prototype chain. We'll need a way to create objects that
+// deviate form their built-in  internal [[Prototype]], and instead, reference
+// an object we specify as the internal [[Prototype]]
+console.log('running object-create!');
+/*const twitterUser = {
+    handle: '@codeofsanju',
+    followers: 9999999
+};*/
+//console.dir(twitterUser);
+
+const twitterUserInternalPrototype = {
+    login(){
+        console.log('I am logged in!');
+    },
+    logout(){
+        console.log('I am logged out');
+    }
+};
+
+const twitterUser = Object.create(twitterUserInternalPrototype);
+twitterUser.handle = '@codeofsanju';
+twitterUser.followers = 999999;
+console.dir(twitterUser);
+
+// all twitter usrs should have access to this. So all twitterUsers should
+// be linked to this prototype
+
+
+
+</script>
