@@ -3,13 +3,10 @@
 // deviate form their built-in  internal [[Prototype]], and instead, reference
 // an object we specify as the internal [[Prototype]]
 console.log('running object-create!');
-/*const twitterUser = {
-    handle: '@codeofsanju',
-    followers: 9999999
-};*/
-//console.dir(twitterUser);
 
-const twitterUserInternalPrototype = {
+
+
+const twitterUserInternalPrototype = { // SETUP INTERNAL PROP
     login(){
         console.log('I am logged in!');
     },
@@ -18,8 +15,13 @@ const twitterUserInternalPrototype = {
     }
 };
 
-const twitterUser = Object.create(twitterUserInternalPrototype);
-twitterUser.handle = '@codeofsanju';
+/*const twitterUser = {       INSTEAD OF THIS WE USE
+    handle: '@codeofsanju',
+    followers: 9999999
+};*/
+//console.dir(twitterUser);           
+const twitterUser = Object.create(twitterUserInternalPrototype); // THIS
+twitterUser.handle = '@codeofsanju'; // SET OTHER PROPS USING . NOTATION
 twitterUser.followers = 999999;
 console.dir(twitterUser);
 
