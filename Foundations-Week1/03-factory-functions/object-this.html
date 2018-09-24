@@ -1,0 +1,34 @@
+<script>
+    console.log("object-this.html running");
+
+    // IMPLICIT BINDING OF THIS EXAMPLE
+    const accountPrototype = {
+        addFollower(){
+           this.followers++;
+        },
+        getHandle(){
+            return `Here is my handle ${this.handle}, follow me!`;
+        }
+    }
+
+    const sanjeevsAccount = Object.create(accountPrototype);
+    sanjeevsAccount.handle = '@sanjeev';
+    sanjeevsAccount.followers = 10000;
+    console.dir(sanjeevsAccount);
+
+
+    console.log(sanjeevsAccount.getHandle());
+    console.log(sanjeevsAccount.followers);
+    sanjeevsAccount.addFollower();
+    console.log('Sanjeev after new follower: ', sanjeevsAccount.followers);
+
+    const abiAccount = Object.create(accountPrototype);
+    abiAccount.handle = '@abinav';
+    abiAccount.followers = 2000;
+    console.dir(abiAccount);
+
+    console.log(abiAccount.getHandle()); // GET HANDLE LOOKS AT WHATS DIRECTLY LEFT OF IT TO KNOW WHAT THIS IS
+    console.log(abiAccount.followers);
+    abiAccount.addFollower();
+    console.log('Abinav after new follower: ', abiAccount.followers);
+</script>
