@@ -1,0 +1,23 @@
+<script>
+    const cellPhoneUtilities = {
+        togglePower() {
+            // refactor the togglePower method to reference the object
+            // togglePower is called on, toggle the value of the power property (true to false || false to true);
+            return !this.power;
+        }
+    };
+
+    const iPhone = Object.create(cellPhoneUtilities);
+    iPhone.type = "iPhone";
+    iPhone.power = true;
+
+    const pixel = Object.create(cellPhoneUtilities);
+    pixel.type = "Pixel";
+    pixel.power = false;
+
+
+    console.log("Iphone before toggle: ", iPhone.power);
+    console.log("After: ", iPhone.togglePower());
+    console.log("Pixel before toggle: ", pixel.power);
+    console.log("After: " , pixel.togglePower());
+</script>
