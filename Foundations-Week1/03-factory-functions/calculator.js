@@ -16,14 +16,27 @@ const createCalculator = () => {
     }
 }
 
+
 const addSquareMethod = (arr) => {
-    return arr.map(obj =>{ 
-        obj.square = () =>{
-            return obj.curr * obj.curr;
-        };
-        return obj;
-    })
+    var newArr = [];
+
+    for (let i = 0; i < arr.length; i++) {
+        let obj = arr[i];
+        obj.square = () => {
+            return obj.curr ** 2;
+        }
+        newArr[i] = obj;
+    }
+    return newArr;
+    // var newArr = arr.map(obj =>{ // return the array that is returned by the map function
+    //     obj.square = () =>{
+    //         return obj.curr * obj.curr;
+    //     };
+    //     return obj;
+    // })
+    // return newArr;
 }
+
 
 const createHumanCalculatorInternalPrototype = {
     add(n){
