@@ -1,0 +1,44 @@
+<script>
+    // Normal factory function
+    const puppyFactory = (name, breed) => {
+        return{
+            name,
+            breed,
+            bark(){
+                console.log("ruff, ruff!");
+            },
+            sleep(){
+                console.log('zzzZZZzzz');
+            }
+
+        }
+    }
+    const max = puppyFactory('Max', 'Husky');
+    console.dir(max);
+    max.bark();
+    max.sleep();
+
+    // Factory Functions with custom/internal prototype:
+    const puppFactoryInteranlProtoype = {
+        bark(){
+            console.log(`${this.name} goes ruff, ruff!`);
+        },
+        sleep(){
+            console.log(`${this.name} goes zzzZZZzzz`);
+        }
+    }
+
+    const puppyFactory2 = (name, breed) => {
+        const instance = Object.create(puppFactoryInteranlProtoype);
+        instance.name = name;
+        instance.breed = breed;
+        return instance;
+    }
+
+    const bobby = puppyFactory2('Bobby', 'Beegle');
+    const bennie = puppyFactory2('Bennie', 'Golden Retriever');
+    console.dir(bobby);
+    bobby.bark();
+    console.dir(bennie);
+    bennie.sleep();
+</script>
