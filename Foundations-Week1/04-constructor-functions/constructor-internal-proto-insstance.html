@@ -1,0 +1,16 @@
+<script>
+        function CreateGithubUser(username, billingplan = 'free'){ // can we use arrow functions?
+            this.userName = username;
+            this.billingPlan = billingplan;
+            this.repositories = [];
+        } // notice no return is needed, new does an implicit return of this instance
+    
+        
+        CreateGithubUser.prototype.createRepo = function(name) {
+            this.repositories.push(name);
+        }
+
+        const sanjeevAccount = new CreateGithubUser('Sanjeev');
+        console.dir(sanjeevAccount); // notice how this instances internal prototype (__proto__) is the same as CreateGithubUser.prototype and therefore the function createRepo is available for it.
+    
+    </script> 
