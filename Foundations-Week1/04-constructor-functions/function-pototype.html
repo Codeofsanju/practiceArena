@@ -1,0 +1,12 @@
+<script>
+    // Functions have a unique proptery called prototype. This prototype is not the internal prototype,
+    // it is unique to each function. This propertie is an object that by default holds the function
+    // constructor and its own internal prototype. You can access it in the following way:
+    
+    function normalFunction() {
+
+    }
+    const normalFunctionPrototypeProperty = normalFunction.prototype;
+    const normalFunctionInternalPrototype = Object.getPrototypeOf(normalFunction);
+    normalFunction.prototype.helloWorld = 'hello world';
+</script>

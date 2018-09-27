@@ -1,5 +1,5 @@
 <script>
-    function CreateGithubUser(username, billingplan = 'free'){
+    function CreateGithubUser(username, billingplan = 'free'){ // can we use arrow functions?
         this.userName = username;
         this.billingPlan = billingplan;
         this.repositories = [];
@@ -10,5 +10,7 @@
 
     const brianAcount = new CreateGithubUser('Brian', '$10');
     console.dir(brianAcount);
+
+   
 
 </script> 
