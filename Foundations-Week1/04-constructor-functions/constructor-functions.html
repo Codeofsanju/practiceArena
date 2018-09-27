@@ -1,6 +1,14 @@
 <script>
-    function CreateGithubUser(username, ){
+    function CreateGithubUser(username, billingplan = 'free'){
         this.userName = username;
-    }
+        this.billingPlan = billingplan;
+        this.repositories = [];
+    } // notice no return is needed, new does an implicit return of this instance
 
-</script>
+    const sanjeevAccount = new CreateGithubUser('Sanjeev');
+    console.dir(sanjeevAccount);
+
+    const brianAcount = new CreateGithubUser('Brian', '$10');
+    console.dir(brianAcount);
+
+</script> 
