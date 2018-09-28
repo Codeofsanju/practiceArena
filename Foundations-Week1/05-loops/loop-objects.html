@@ -1,0 +1,20 @@
+<script>
+    // for-in method:
+    function Dog(name, breed, color){
+        this.color = color;
+        this.bread = breed;
+        this.name = name;
+    }
+    
+    Dog.prototype.bark = 'Bark!';
+    
+    const myDog = new Dog('Duke', 'Labrador', 'Chocolate');
+    for(let key in myDog){ // loops through entire object including .prototype
+        if(myDog.hasOwnProperty(key)){ // checks to see if object is in prototype or in myDog
+            console.log(key);
+        }
+    }
+
+    //Object.keys() method:
+    console.log(Object.keys(myDog)); // returns an array of the object's keys that belong in the object (does not traverse prototype chain). 
+</script>

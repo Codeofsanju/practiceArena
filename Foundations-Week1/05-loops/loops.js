@@ -74,3 +74,25 @@ const gridGenerator = (n) =>{
 }
 // a going down
 // b going across
+
+//LOOPING THROUGH OBJECTS (for in method)
+function paramify(obj){
+    let ans = [];
+    for(let key in obj){
+        if(obj.hasOwnProperty(key)){
+            ans.push(`${key}=${obj[key]}`);
+        }
+    }
+    return join(ans.sort(), '&');
+}
+
+//Objectkeys
+const paramifyObjectKeys = (obj) =>{
+    let ans = [];
+    const keys = Object.keys(obj);
+    for(let i = 0; i < keys.length; i++){
+        ans.push( `${keys[i]}=${obj[keys[i]]}`)
+    }
+    return join(ans.sort(), '&');
+}
+
