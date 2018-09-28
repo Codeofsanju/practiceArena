@@ -96,3 +96,17 @@ const paramifyObjectKeys = (obj) =>{
     return join(ans.sort(), '&');
 }
 
+//SORT
+const sort = (n)=>{
+    for(let i = 0; i < n.length; i++){
+        for(let j = 0; j < n.length; j++){    
+            if(n[i] < n[j]){
+                let temp = n[j];
+                n[j] = n[i];
+                n[i] = temp;
+            }
+        }
+    }
+    console.log(n);
+    return n;
+}
