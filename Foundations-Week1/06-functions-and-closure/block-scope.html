@@ -1,10 +1,21 @@
 <script>
     console.log('block-scope.html running');
     if(true){
-        let firstVar = 'first var';
-        var secondVar = 'secong var';
-        console.log(firstVar);
-        console.log(secondVar);
+        let letVar = 'let Var';
+        const constVar = 'const Var';
+        var varVar = 'var Var';
+        console.log('letVar from inside block: ',letVar);
+        console.log('constVar from inside block: ', constVar);
+        console.log('varVar from inside block: ', varVar);
+
+        {
+            let nestedBlockLetVar = 'Nested block let var';
+            console.log('let variable from inside nested block: ', nestedBlockLetVar);
+            console.log('Nested block inherited vars from parent block: ', letVar, ' ', constVar, ' ', varVar);
+        }
     }
     //console.log(firstVar); firstVar is block scoped to the if statement block, and therefore not available to the global space. This happens for let and const variables in blocks!
+    console.log('letVar not available from outside block!');
+    console.log('constVar not available from outside block!');
+    console.log('varVar from outside block: ',varVar);
 </script>
