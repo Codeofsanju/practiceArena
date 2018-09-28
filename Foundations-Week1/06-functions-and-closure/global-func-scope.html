@@ -1,0 +1,15 @@
+<script>    
+    console.log("global-func-scope running");
+    
+    // GLOBAL SCOPE - bar and foo() are in the gloabl scope
+    const bar = 'bar';
+
+    function foo(){
+        const baz = 'baz'; // Function scope variable 
+        console.log(baz); // you can reference function scoped variables only from inside the function they are defined
+        return bar; // we have access to bar since it is in the gloabl scope.
+    }
+
+    //console.log(baz); cannot access child function scoped variable from parent (in this case immediate parent is global scope)
+    console.log(foo());
+</script>
