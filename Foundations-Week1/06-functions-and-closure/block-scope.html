@@ -1,0 +1,10 @@
+<script>
+    console.log('block-scope.html running');
+    if(true){
+        let firstVar = 'first var';
+        var secondVar = 'secong var';
+        console.log(firstVar);
+        console.log(secondVar);
+    }
+    //console.log(firstVar); firstVar is block scoped to the if statement block, and therefore not available to the global space. This happens for let and const variables in blocks!
+</script>
