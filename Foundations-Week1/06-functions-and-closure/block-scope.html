@@ -7,12 +7,17 @@
         console.log('letVar from inside block: ',letVar);
         console.log('constVar from inside block: ', constVar);
         console.log('varVar from inside block: ', varVar);
+        //console.log(nestedBlockLetVar); not possible! 
+        console.log(nestedBlockvarVar); // comes as undefined (not defined yet)
 
         {
+            var nestedBlockvarVar = 'Nested block var Var';
             let nestedBlockLetVar = 'Nested block let var';
             console.log('let variable from inside nested block: ', nestedBlockLetVar);
             console.log('Nested block inherited vars from parent block: ', letVar, ' ', constVar, ' ', varVar);
         }
+
+        console.log(nestedBlockvarVar); // not undefined now that it is defined
     }
     //console.log(firstVar); firstVar is block scoped to the if statement block, and therefore not available to the global space. This happens for let and const variables in blocks!
     console.log('letVar not available from outside block!');
