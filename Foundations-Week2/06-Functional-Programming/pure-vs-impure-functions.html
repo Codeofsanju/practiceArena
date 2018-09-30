@@ -10,5 +10,25 @@
     console.log(square(5));
     console.log(square(5)); // SAME OUTPUT FOR SAME GIVEN ARGUMENTS
 
+
+    //Impure Functions 
+    let count = 10;
+    const squareImp = (n) =>{
+        count++; // this function is incremementing a variable outside of its scope, meaning it is impure
+        return n*n;
+    } 
+    console.log(count);
+    console.log(squareImp(2));
+    console.log(count); // count changes here after a call to squareImp 
+    console.log(squareImp(2));
+    console.log(count); // given the same argument of 2, we get a different count value. IMPURE!
     
+    
+    const someObj= {};
+
+    const addFunc = (obj) =>{  // this function is impure because it is altering the state of a parent variable, in this case a object
+        obj.a = 'a';
+    }
+
+
 </script>
