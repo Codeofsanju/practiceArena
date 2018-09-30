@@ -1,0 +1,23 @@
+<script>
+    console.log("imperative-vs-declarative running");
+     
+    // Imperative technique
+    const doublerImp = (arr) => {
+        const newArr = [];
+        for (let i = 0; i < arr.length; i++){
+            newArr.push(arr[i] * 2);
+        }
+        return newArr;
+    }
+
+    const doubleDec = (arr) => {
+        return arr.map((num) => {
+            return num*2;
+        })
+    }
+
+    const inputArr = [1,2,3,4,5,6];
+
+    console.dir(doublerImp(inputArr));
+    console.dir(doubleDec(inputArr));
+</script>
