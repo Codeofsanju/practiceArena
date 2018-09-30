@@ -1,0 +1,19 @@
+<script>
+    console.log("functional-programming-example running")
+    
+    function forEach(arr, callBack){ // forEach allow us to take out looping through arrays from all of our array methods 
+        for(let i = 0; i < arr.length; i++){
+            callBack(arr[i]);
+        }
+    }
+
+    const arr = [1,2,3,4,5,6,7];
+
+    function showValue(n){
+        console.log(n);
+    }
+    console.log(forEach(arr, showValue)); // passing an array and function
+
+    // or
+    console.log(forEach(arr, (n)=> console.log(n))); // passing an array and an anonymous function 
+</script>
