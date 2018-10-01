@@ -1,0 +1,15 @@
+<script>
+    console.log('first-class-functions running');
+    // Functions in JavaScript are considered to be first-class functions. This means they are treated like objects, booleans, variables...
+    // This means they can be returned from a functions, passed as an argument to a functions, assigned as a variable, a method, or stored in an array
+
+    const firstClass = () => 'I am a first class functions';
+
+    const red = () => 'red';
+    const blue = () => 'blue';
+
+    const arr = [red, blue];
+    console.dir(arr); // here you can see both functions stored inside of the array
+    console.log(arr[0]()); // calling a function from an array is just like referencing any other variable in an array
+    console.log(arr[1]());
+</script>
