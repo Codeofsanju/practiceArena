@@ -49,3 +49,15 @@ const includes = (collection, element) =>{
     }
     return false;
 }
+
+// countWord
+const countWords = (startValue, sentence) =>{
+    let count = startValue+1; // we add one here to account for the last word
+    for(let i = 0; i < sentence.length; i++){
+        if(sentence[i] === ' '){
+            count++;
+        }
+    }
+    return count;
+}
+
