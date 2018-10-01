@@ -19,3 +19,19 @@ const swapCase = (string) =>{
     })
     .join(' ');
 }
+
+// Using filter 
+// extensionSearch takes an extension and an array of file names as argument.
+// it used the Array.prototype.filter method to return an array with files with the argument
+
+const extensionSearch = (extension, arr) =>{
+    return arr.filter((n) => { // most efficient method (no use of includes)
+        const ext = n[n.length - 3] + n[n.length-2] + n[n.length-1];
+        if(extension === ext){
+            return true;
+        }
+        return false;
+    })
+    //or
+    //return arr.filter((n) => n.includes(extension); // simple but not as efficient
+}
