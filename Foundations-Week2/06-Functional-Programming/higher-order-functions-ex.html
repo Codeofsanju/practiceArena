@@ -1,0 +1,12 @@
+<script>
+console.log('higher-order-functions-ex running');
+
+const stranger = ()=>{
+    return function(){ // literally the same as returning some variable or a bool
+        return 'stranger things';
+    }
+}
+console.log(stranger()); // we see when we log stranger() our function definition is returned
+const func = stranger(); // using this we assign the function definition to a variable
+console.log(func()); // and use this variable to invoke the function
+</script>
