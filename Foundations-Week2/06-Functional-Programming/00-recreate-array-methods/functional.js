@@ -79,4 +79,17 @@ const reduce = (arr)=>{
         return sum;
     }
 }
+// use reduce inside a sum function that takes an array of integers:
+const sum = (arr) => reduce(arr);
 
+// The function every
+// `every` tests if every element in this array passes the condition in the function
+// If all the values pass the condition, `every` returns `true`
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every
+const every = (arr, callBack) =>{
+    const filtered = filter(arr, callBack);
+    if(filtered.length === arr.length){
+        return true;
+    }
+    return false;
+}
