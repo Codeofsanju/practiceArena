@@ -61,3 +61,22 @@ const countWords = (startValue, sentence) =>{
     return count;
 }
 
+// use the reduce function inside a sum function that takes an array of integers
+const reduce = (arr)=>{
+    let sum = 0;
+    let numWords = 0;
+    console.log(typeof arr[0]);
+    if(typeof arr[0] === 'string'){
+        map(arr, (n) =>{
+            numWords += countWords(0, n);
+        })
+        return numWords;
+    }
+    else{
+        map(arr, (n)=>{
+            sum += n;
+        })
+        return sum;
+    }
+}
+
