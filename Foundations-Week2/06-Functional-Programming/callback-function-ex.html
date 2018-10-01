@@ -1,0 +1,13 @@
+<script>
+console.log('callback-function-ex.html');
+
+const calculator = (callBack, a, b) => callBack(a,b); 
+
+const add = (a,b) => a+b;
+const multiply = (a,b) => a*b;
+
+console.log('Higher Order Function: \ncalculator(): ', calculator);
+console.log('callBack functions: \nadd(a, b): ', add, '\nmultiply(a, b): ' ,multiply);
+console.log('Adding 10+2: ',calculator(add, 10, 2));
+console.log('Multiplying 10*2: ', calculator(multiply, 10, 2));
+</script>

@@ -1,0 +1,20 @@
+<script>
+console.log('functions-as-arguments-ex running');
+
+const arrOfFunctions = [];
+const blue = () => 'blue';
+
+arrOfFunctions.push(blue); // blue (a function) is passed as an argument to the array push method
+
+console.dir(arrOfFunctions);
+console.log(arrOfFunctions[0]());
+
+// another example where we pass our own function to another function as an argument 
+const goodMorning = () => 'Good Morning!';
+
+const greeter = (functionArgument, name) => `Hello ${name}, ${functionArgument()}`;
+
+console.log(greeter(goodMorning, 'Sanjeev Sharma')); // we pass a reference to the goodMorning function to our greeter function
+
+
+</script>
