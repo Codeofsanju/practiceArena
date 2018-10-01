@@ -64,20 +64,15 @@ const countWords = (startValue, sentence) =>{
 // use the reduce function inside a sum function that takes an array of integers
 const reduce = (arr)=>{
     let sum = 0;
-    let numWords = 0;
-    console.log(typeof arr[0]);
-    if(typeof arr[0] === 'string'){
-        map(arr, (n) =>{
-            numWords += countWords(0, n);
-        })
-        return numWords;
-    }
-    else{
-        map(arr, (n)=>{
+    map(arr, (n) =>{
+        if(typeof n === 'string'){
+            sum += countWords(0, n);
+        }
+        else{
             sum += n;
-        })
-        return sum;
-    }
+        }
+    })
+    return sum;
 }
 // use reduce inside a sum function that takes an array of integers:
 const sum = (arr) => reduce(arr);
@@ -89,6 +84,14 @@ const sum = (arr) => reduce(arr);
 const every = (arr, callBack) =>{
     const filtered = filter(arr, callBack);
     if(filtered.length === arr.length){
+        return true;
+    }
+    return false;
+}
+
+const any = (arr, callBack)=>{
+    const filtered = filter(arr, callBack);
+    if(filtered.length > 0){
         return true;
     }
     return false;
