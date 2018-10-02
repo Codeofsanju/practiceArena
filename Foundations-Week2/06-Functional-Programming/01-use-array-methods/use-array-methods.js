@@ -116,3 +116,16 @@ const separateAndReturnNames = (arr, nameArg, max) =>{
     .map((obj) => obj[nameArg]); // return only name
 }
 
+// returns total time needed to complete high priority tasks
+// takes a todo list for argument: todo list is an array of objects
+// with name, duration, priority properties
+// use filter and reduce
+
+const priorityTodoDuration = (arr) =>{
+    return arr.filter((obj)=> obj.priority === 'high')
+    .reduce((accum, obj)=>{
+        return accum + obj.duration;
+    },0)
+}
+
+
