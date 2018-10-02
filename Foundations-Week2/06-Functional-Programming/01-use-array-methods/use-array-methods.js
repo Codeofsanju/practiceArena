@@ -50,12 +50,10 @@ const getPopulation = (arrOfCountries, arrOfName) =>{
 }
 
 const keyifyArrayOfObjects = (key, arr) =>{ //EXPLAIN
-    console.dir(arr);
     const ans = arr.reduce((accum, superhero) =>{
         accum[superhero[key]] = superhero; // how does this WORK? WAT?
         return accum;
     }, {})
-    console.log(ans);
     return ans;
 }
 
@@ -67,4 +65,54 @@ const powerLevelAverage = (arr) =>{
     return Math.round(arr.reduce(total, 0)/arr.length);
 }
 
-  
+// Recreate map using reduce
+const mapReduce = (arr, callBack) =>{
+    return arr.reduce((accum, index)=> {
+        accum.push(callBack(index));
+        return accum;
+    }, [])
+}
+
+// Recreate filter using reduce
+const filterReduce = (arr, callBack) =>{
+    return arr.reduce((accum, index) => {
+        if(callBack(index)){
+            accum.push(index);
+        }
+        return accum;
+    },[])
+}
+
+//Method Chaining 
+
+// inYourBudget - returns a array, takes a budget and objects of items as argument
+// returns all items names you can afford
+const inYourBudget = (budget, arr) =>{
+    const newArr = arr.filter((value) => value.price <= budget && value);
+    return newArr.map((n) =>{
+        if(newArr.length === 0){
+            return [];
+        }
+        return n.item;
+    })
+    // OR
+    //return arr.filter((obj) => obj.price <= budget).map((obj)=> obj.item);
+}
+
+// Seperate and return names
+// Seperates the name properties and creates 'firstName' and 'lastName' properties
+// returns an array of either first or last names based on the second argument
+// // and the third argument max length of string name
+// used map and filter to accomplish this
+
+const separateAndReturnNames = (arr, nameArg, max) =>{
+    return arr.map((obj)=> { // split name, add firstName, lastName property
+        nameArr = obj.name.split(' ');
+        obj.firstName = nameArr[0];
+        obj.lastName = nameArr[1];
+        return obj;
+    })
+    .filter((obj)=> obj[nameArg].length <= max) // filter out names that are longer then max
+    .map((obj) => obj[nameArg]); // return only name
+}
+
