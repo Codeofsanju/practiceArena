@@ -37,10 +37,12 @@ const filter = (arr, callBack) =>{
     return ans;
 }
 
+
+
 //Re-implement the Array.prototype.includes method:
 // the includes determines whether an array includes a certain element, returning true or false as appropriate
 const includes = (collection, element) =>{
-    for(key in collection){
+    for(key in collection){ // dont use on arrays because order isn't guaranteed
         if(collection.hasOwnProperty(key)){    
             if(collection[key] === element){
                 return true;
@@ -49,6 +51,7 @@ const includes = (collection, element) =>{
     }
     return false;
 }
+
 
 // countWord
 const countWords = (startValue, sentence) =>{
@@ -59,16 +62,18 @@ const countWords = (startValue, sentence) =>{
         }
     }
     return count;
+    // or return startValue += sentence.splt(' ').length;
 }
+
+
 
 // use the reduce function inside a sum function that takes an array of integers
 
 const reduce = (array, startingValue, combiningFunc) => {
-    let accumulator = startingValue;
     for (let i = 0; i < array.length; i++) {
-        accumulator = combiningFunc(accumulator, array[i]);
+        startingValue = combiningFunc(startingValue, array[i]);
     }
-        return accumulator;
+        return startingValue;
 };
 // use reduce inside a sum function that takes an array of integers:
 const sum = (arr) => reduce(arr, 0, (n, m) => n+m);
