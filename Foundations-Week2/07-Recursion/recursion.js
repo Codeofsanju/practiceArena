@@ -17,6 +17,13 @@ function factorialIterative(n){
     return ans;
 }
 
+function sumTheDigits(arr) {
+    if(arr.length === 0){
+        return 0;
+    }
+    return arr.pop() + sumTheDigits(arr);
+}
+
 
 function countTheVowels(str) {
  
