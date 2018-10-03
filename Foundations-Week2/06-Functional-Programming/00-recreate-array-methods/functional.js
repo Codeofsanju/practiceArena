@@ -62,37 +62,26 @@ const countWords = (startValue, sentence) =>{
 }
 
 // use the reduce function inside a sum function that takes an array of integers
-const reduce = (arr)=>{
-    let sum = 0;
-    map(arr, (n) =>{
-        if(typeof n === 'string'){
-            sum += countWords(0, n);
-        }
-        else{
-            sum += n;
-        }
-    })
-    return sum;
-}
+
+const reduce = (array, startingValue, combiningFunc) => {
+    let accumulator = startingValue;
+    for (let i = 0; i < array.length; i++) {
+        accumulator = combiningFunc(accumulator, array[i]);
+    }
+        return accumulator;
+};
 // use reduce inside a sum function that takes an array of integers:
-const sum = (arr) => reduce(arr);
+const sum = (arr) => reduce(arr, 0, (n, m) => n+m);
 
 // The function every
 // `every` tests if every element in this array passes the condition in the function
 // If all the values pass the condition, `every` returns `true`
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every
-const every = (arr, callBack) =>{
-    const filtered = filter(arr, callBack);
-    if(filtered.length === arr.length){
-        return true;
-    }
-    return false;
-}
+const every = (arr, combingFunc) =>{
+    const callBack = (x, y) => x && combingFunc(y);
+    return reduce(arr, true, callBack);
+ }
 
-const any = (arr, callBack)=>{
-    const filtered = filter(arr, callBack);
-    if(filtered.length > 0){
-        return true;
-    }
-    return false;
+const any = (arr, combiningFunc)=>{
+    return reduce(arr, false, (x,y) => x || combiningFunc(y));
 }
