@@ -9,6 +9,13 @@ function factorial(n) {
     return n * factorial(n - 1);
 }
 
+function factorialIterative(n){
+    let ans = 1;
+    for(let i = n; i > 0; i--){
+         ans *= i;
+    }
+    return ans;
+}
 
 
 function countTheVowels(str) {
