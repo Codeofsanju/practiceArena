@@ -2,16 +2,17 @@
 // their arguments! Read the test specs to see why these functions already defined as a function
 // declaration.
 
-function factorial() {
-
+function factorial(n) {
+    if(n === 0){
+        return 1;
+    }
+    return n * factorial(n - 1);
 }
 
-function sumTheDigits() {
 
-}
 
-function countTheVowels() {
-
+function countTheVowels(str) {
+ 
 }
 
 function recSmallestInt() {
