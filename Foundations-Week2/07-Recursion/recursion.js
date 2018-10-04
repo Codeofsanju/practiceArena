@@ -49,5 +49,12 @@ function stringify() {
 
 }
 
+// evenAndOdd takes an array of numbers and splits the numbers into a multi-dimentional
+// array of even and odd numbers 
+function evenAndOdd(arr, ans = [[],[]]) {
+    arr[0] % 2 === 0 ? ans[0].push(arr[0]) : ans[1].push(arr[0]);
+    arr.shift();
+    return arr.length === 0 ? ans : evenAndOdd(arr, ans);
+}
 
 
