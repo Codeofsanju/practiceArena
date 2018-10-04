@@ -24,16 +24,24 @@ function sumTheDigits(arr) {
     return arr.pop() + sumTheDigits(arr);
 }
 
-
+// returns the total amount of vowels in a string (a,e,i,o,u are considered vowels, ignore y)
+// calls itself recursively
 function countTheVowels(str) {
- 
+    if(!str.length){
+        return 0;
+    }
+    return 'aeiouAEIOU'.includes(str[0]) + countTheVowels(str.slice(1));
 }
 
-function recSmallestInt() {
-
+function recSmallestInt(arr) {
+    if(arr.length === 1){
+        return arr[0];
+    }
+    arr[0] < arr[arr.length -1] ? arr.pop() : arr.shift();
+    return recSmallestInt(arr);
 }
 
-function fib() {
+function fib(n) {
 
 }
 
