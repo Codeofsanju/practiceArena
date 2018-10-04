@@ -45,9 +45,7 @@ function fib(n) {
     return (n===0 || n===1) ? 1 : fib(n-1) + fib(n-2);
 }
 
-function stringify() {
 
-}
 
 // evenAndOdd takes an array of numbers and splits the numbers into a multi-dimentional
 // array of even and odd numbers 
@@ -57,4 +55,22 @@ function evenAndOdd(arr, ans = [[],[]]) {
     return arr.length === 0 ? ans : evenAndOdd(arr, ans);
 }
 
+const type = val => {
+     return Object.prototype.toString.call(val).slice(8, -1);
+};
 
+function stringify(anything){
+    const typeOfIn = type(anything);
+    if(typeOfIn != 'Array' && typeOfIn != 'Object' && typeOfIn != 'String'){
+        return `${anything}`;
+    }
+    if(typeOfIn === 'String'){ // string has quotes within the string
+        return `"${anything}"`;
+    }
+    if(typeOfIn === 'Array'){
+
+    }
+    if(typeOfIn === 'Object'){
+
+    } 
+}
