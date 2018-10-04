@@ -50,10 +50,10 @@ function fib(n) {
 // evenAndOdd takes an array of numbers and splits the numbers into a multi-dimentional
 // array of even and odd numbers 
 function evenAndOdd(arr, ans = [[],[]]) {
-    arr[0] % 2 === 0 ? ans[0].push(arr[0]) : ans[1].push(arr[0]);
-    arr.shift();
-    return arr.length === 0 ? ans : evenAndOdd(arr, ans);
+    arr[arr.length -1] % 2 === 0 ? ans[0].push(arr[arr.length -1]) : ans[1].push(arr[arr.length-1]);
+    return arr.length === 1 ? ans : evenAndOdd(arr.slice(0, arr.length-1), ans);
 }
+console.log(evenAndOdd([1,2,3,4,5,6,7]));
 
 const type = val => {
      return Object.prototype.toString.call(val).slice(8, -1);
@@ -61,16 +61,19 @@ const type = val => {
 
 function stringify(anything){
     const typeOfIn = type(anything);
-    if(typeOfIn != 'Array' && typeOfIn != 'Object' && typeOfIn != 'String'){
-        return `${anything}`;
-    }
-    if(typeOfIn === 'String'){ // string has quotes within the string
-        return `"${anything}"`;
+    if(typeOfIn !== 'Array' && typeOfIn !== 'Object'){
+        return typeOfIn === 'String' ?  `"${anything}"` :`${anything}`;
     }
     if(typeOfIn === 'Array'){
-
+        const ans = anything.map((n) => `${stringify(n)}`).join(',');
+        return `[${ans}]`;
     }
     if(typeOfIn === 'Object'){
-
+        const ans = [];
+        for(const key in obj){
+            ans.push((`${key}: ${stringify(obj[key])},`));
+        }
+        console.log(ans);
+        return `{${ans}}`;
     } 
 }
