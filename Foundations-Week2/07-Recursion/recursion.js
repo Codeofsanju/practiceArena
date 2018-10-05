@@ -70,10 +70,11 @@ function stringify(anything){
     }
     if(typeOfIn === 'Object'){
         const ans = [];
-        for(const key in obj){
-            ans.push((`${key}: ${stringify(obj[key])},`));
+        for(let key in anything){
+            console.log('key', key);
+            ans.push((`"${key}":${stringify(anything[key])}`));
         }
-        console.log(ans);
+        ans.join(',');
         return `{${ans}}`;
     } 
 }
