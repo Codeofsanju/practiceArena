@@ -67,12 +67,21 @@ class RopeDude {
       this.gameState = 'playing';
     }
     submitGuess(guess){
-      if(!this.lettersGuessed.includes(guess)){
-        this.lettersGuessed.push(guess);
-        if(!this.secretWord.includes(guess)){
-          this.remainingGuesses--;
-        }
+      guess = guess.toLowerCase();
+      if (this.gameState !== 'playing')  return;
+      !this.lettersGuessed.includes(guess) && this.lettersGuessed.push(guess);
+      !this.secretWord.includes(guess) && this.remainingGuesses--;
+    }
+    computeGameState(){
+      if(this.remainingGuesses === 0) this.gameState = 'lost';
+      if(this.secretWord.every((n) => this.lettersGuessed.includes(n))){
+        this.gameState = 'won';
       }
+    }
+
+    getSecretWordPuzzle(){
+
+      return this.getSecretWordPuzzle();
     }
 }
 

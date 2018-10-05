@@ -148,7 +148,6 @@ describe('RopeDude Class', () => {
 
     it('handles a space', () => {
       const game = new RopeDude('nacho fries');
-
       expect(game.getSecretWordPuzzle()).toBe('##### #####');
     });
 
