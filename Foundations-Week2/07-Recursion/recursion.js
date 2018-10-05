@@ -71,7 +71,6 @@ function stringify(anything){
     if(typeOfIn === 'Object'){
         const ans = [];
         for(let key in anything){
-            console.log('key', key);
             ans.push((`"${key}":${stringify(anything[key])}`));
         }
         ans.join(',');
