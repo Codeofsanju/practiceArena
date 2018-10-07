@@ -80,7 +80,11 @@ class RopeDude {
     }
 
     getSecretWordPuzzle(){
-
+      // represents the secret word puzzle with '#'
+      // Reveals the correct guesses in the puzzlet
+      // handles spaces
+      // handles multiple spaces
+    
       return this.getSecretWordPuzzle();
     }
 }
