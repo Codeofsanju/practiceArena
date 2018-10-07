@@ -138,6 +138,7 @@ describe('RopeDude Class', () => {
 
       const fiveCorrectGuesses = game.getSecretWordPuzzle();
       expect(fiveCorrectGuesses).toBe('typew##te#');
+      //console.log(fiveCorrectGuesses);
 
       game.submitGuess('r');
       game.submitGuess('i');

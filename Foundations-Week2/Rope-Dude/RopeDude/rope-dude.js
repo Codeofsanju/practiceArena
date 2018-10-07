@@ -80,12 +80,13 @@ class RopeDude {
     }
 
     getSecretWordPuzzle(){
-      // represents the secret word puzzle with '#'
-      // Reveals the correct guesses in the puzzlet
-      // handles spaces
-      // handles multiple spaces
-    
-      return this.getSecretWordPuzzle();
+      if(this.lettersGuessed.length === 0){
+        let ans = this.secretWord.map(n => n !== ' ' ? '#' : ' ').join('');
+        return ans;
+      }
+      const check = this.secretWord.filter(n => this.lettersGuessed.includes(n))
+      const index = check.map(n => this.secretWord.indexOf(n));
+      console.log(this.secretWord, this.lettersGuessed ,check, index);
     }
 }
 
