@@ -80,13 +80,28 @@ class RopeDude {
     }
 
     getSecretWordPuzzle(){
-      if(this.lettersGuessed.length === 0){
-        let ans = this.secretWord.map(n => n !== ' ' ? '#' : ' ').join('');
-        return ans;
+      let ans = this.secretWord.map(n => n !== ' ' ? '#' : ' ');
+      let check = this.secretWord.filter(n => this.lettersGuessed.includes(n))
+      for(let i = 0; i < check.length; i++){
+        for(let j = 0; j < this.secretWord.length; j++){
+          if(check[i] === this.secretWord[j]){
+            ans[j] = check[i];
+          }
+        }
       }
-      const check = this.secretWord.filter(n => this.lettersGuessed.includes(n))
-      const index = check.map(n => this.secretWord.indexOf(n));
-      console.log(this.secretWord, this.lettersGuessed ,check, index);
+      return ans.join('');
+    }
+
+    getGameStateMessage(){
+      if(this.gameState === 'playing'){
+        return `There is a total of ${6 - this.lettersGuessed.length} guesses remaining:\n${ASCIIART[6 - this.lettersGuessed.length]}`;
+      }
+      else if(this.gameState === 'lost'){
+        return `Game Over, the word was "${this.secretWord.join('')}":\n${ASCIIART[0]}`;
+      }
+      else if(this.gameState === 'won'){
+        return `Winner Winner Chicken Dinner, you won!`;
+      }
     }
 }
 
