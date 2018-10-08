@@ -71,6 +71,7 @@ class RopeDude {
       if (this.gameState !== 'playing')  return;
       !this.lettersGuessed.includes(guess) && this.lettersGuessed.push(guess);
       !this.secretWord.includes(guess) && this.remainingGuesses--;
+      this.computeGameState();
     }
     computeGameState(){
       if(this.remainingGuesses === 0) this.gameState = 'lost';
@@ -103,5 +104,20 @@ class RopeDude {
         return `Winner Winner Chicken Dinner, you won!`;
       }
     }
+
+
 }
 
+
+
+const simulateRopeDude = () =>{
+  const game = new RopeDude('sanjeev');
+  game.submitGuess('s');   
+  game.submitGuess('a');   
+  game.submitGuess('e');
+  game.submitGuess('v');
+ 
+  console.log(game.getSecretWordPuzzle());
+  console.log(game.getGameStateMessage());
+  return game.getGameStateMessage();
+}
