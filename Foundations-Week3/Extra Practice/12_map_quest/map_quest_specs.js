@@ -10,7 +10,7 @@ describe('mapQuest', () => {
 
   it('does not change the directional points if the directions next to each other are not opposites', () => {
     expect(mapQuest(['S'])).toEqual(['S']);
-    expect(mapQuest(['N'])).toEqual(['N']);
+    expect(mapQuest(['N'])).toEqual(['N']); 
     expect(mapQuest(['N', 'W'])).toEqual(['N', 'W']);
     expect(mapQuest(['N', 'E', 'S', 'W'])).toEqual(['N', 'E', 'S', 'W']);
   });
