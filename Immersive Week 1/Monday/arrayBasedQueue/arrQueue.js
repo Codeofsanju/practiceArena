@@ -18,7 +18,7 @@ class Queue{
     }
     enqueue(n){
         this.arr[this.length-1] = n;
-        this.length++;
+        this.length+=1;
     }
     peek(){
         return this.arr[0];
