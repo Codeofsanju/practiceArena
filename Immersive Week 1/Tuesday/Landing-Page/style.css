@@ -26,8 +26,11 @@ h2 {
   font-weight: normal;
 }
 
-h1, h2, h3, nav {
-  font-family: "Saira Extra Condensed", sans-serif;
+h1,
+h2,
+h3,
+nav {
+  font-family: 'Saira Extra Condensed', sans-serif;
 }
 
 /* Responsive images */
@@ -48,7 +51,7 @@ section h2 {
   margin: 60px 0;
 }
 section h2:after {
-  content: "";
+  content: '';
   position: absolute;
   bottom: -20px;
   width: 60px;
@@ -66,3 +69,36 @@ header {
 /* 
  * YOUR CSS:
  */
+
+#about-body {
+  display: flex;
+  flex-direction: row;
+}
+
+#about-body p {
+  flex: 2.5;
+  margin-left: 16px;
+}
+#aboutmockup {
+  flex: 2;
+}
+
+#staff-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.staff-profile {
+  text-align: center;
+  font-style: italic;
+  flex-basis: 30%;
+}
+.staff-profile p {
+  text-align: justify;
+  font-style: italic;
+}
+
+.staff-profile i {
+  font-size: 24px;
+}
