@@ -102,3 +102,56 @@ header {
 .staff-profile i {
   font-size: 24px;
 }
+
+
+
+header{
+  position: fixed;
+  z-index: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 54px;
+  width: 95%;
+  left: 2.5%;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+header img{
+  height: 30px;
+  margin-left: 13px;
+}
+
+header > div{
+  flex-grow: 3;
+}
+
+header nav{
+  flex-grow: .50;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+}
+
+.nav-item{
+  transition-duration: .2s;
+  font-size: 24px;
+}
+
+.nav-item:hover{
+  background: #1a87b7;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  padding: 5px;
+}
+
+.nav-item a{
+  color: white;
+  text-decoration: none;
+}
+.logo{
+  display: flex;
+  justify-content: space-between;
+}
