@@ -93,7 +93,15 @@ header {
   text-align: center;
   font-style: italic;
   flex-basis: 30%;
+  transition-duration: .3s;
+  padding: 10px;
 }
+
+.staff-profile:hover{
+  background: #f39c12;
+  border-radius: 15px;
+}
+
 .staff-profile p {
   text-align: justify;
   font-style: italic;
@@ -138,10 +146,11 @@ header nav{
 .nav-item{
   transition-duration: .2s;
   font-size: 24px;
+  padding: 3px;
 }
 
 .nav-item:hover{
-  background: #1a87b7;
+  background: #f39c12;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
   padding: 5px;
@@ -158,6 +167,7 @@ header nav{
 #carousel{
   display: flex;
   height: 100vh;
+  text-align: center;
 }
 #carousel > img{
   top:0;
