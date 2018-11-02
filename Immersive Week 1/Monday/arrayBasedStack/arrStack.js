@@ -25,7 +25,7 @@ class Stack{
         return this.arr.reduce((accum, n) =>{
             accum++;
             return accum;
-        }, 0)
+        }, 0);
     }
 }
 
