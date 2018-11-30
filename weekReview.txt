@@ -1,0 +1,6 @@
+This weeks learning was all about react & some redux:
+- 1: React Routing (Readium)
+- 2: React Forms (Todo List)
+- 3: React Design Patterns - Life Cycle Methods (Wizard Quiz)
+- 4: Functional Programming (Jamda, Pointfree)
+- 5: Redux-Redux Middleware (Redux-Pixalate)
