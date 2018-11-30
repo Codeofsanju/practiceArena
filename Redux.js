@@ -22,4 +22,7 @@ store.getState(); // {balance: 0}
                 /*\/\/\/\/\/action\/\/\/\/\/*/
 store.dispatch({type: 'DEPOSIT', amount: 100});
 
+
+
+
 store.getState(); // {balance: 100}
